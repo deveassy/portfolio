@@ -18,7 +18,7 @@ const RootRouter = () => {
 
 export default RootRouter;
 
-
+//컴포넌트 소개 화면
 const Container = styled.div`
     display: flex;
     flex-direction: column;
