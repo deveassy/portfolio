@@ -2,8 +2,7 @@ import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {BrowserRouter} from 'react-router-dom';
 // import Items from './components/Items';
-import RootRouter from './routes/Root';
-import PlayButton from './routes/Play';
+import RootRouter from './routes';
 import './App.css';
 
 export default function App() {
@@ -12,9 +11,7 @@ export default function App() {
       <GlobalStyle />
       <BrowserRouter>
         <ContentContainer>
-          <PlayButton />
           <RootRouter />
-          {/* <Items /> */}
         </ContentContainer>
       </BrowserRouter>
     </Container>
@@ -34,8 +31,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-left: 10px;
-  background-color: gray;
 `;
 
 const ContentContainer = styled(Container)`

@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom';
 
 export default function About() {
     return(
-        <AboutMe to="/about">▶︎</AboutMe>
+        <AboutMe to="/about">
+            Profile
+            <Link to="/">Main</Link>
+        </AboutMe>
     )
 }
 
