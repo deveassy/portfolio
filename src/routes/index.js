@@ -3,22 +3,24 @@ import styled from 'styled-components';
 import {Switch, Route} from 'react-router-dom';
 import Main from '../components/Main';
 import About from '../components/About';
-import Detail from '../components/Detail';
-import Comp from '../components/Comp';
-// import {ButtonBoard, CheckBoxBoard, PopoverBoard} from '../boards';
+// import Detail from '../components/Detail';
+// import Comp from '../components/Comp';
+import {ButtonBoard, CheckBoxBoard, PopoverBoard} from '../boards';
 
-const RootRouter = () => {
+const RootRouter = ({children}) => {
     return(
         <Container>
             <Switch>
                 <Route exact path="/" component={Main} />
                 <Route path="/about" component={About} />
-                <Route path="/detail" component={Detail} />
-                <Route path="/components" component={Comp} />
-                {/* <Route path="/button" component={ButtonBoard} />
+                {children}
+                {/* <Route path="/detail" component={Detail} /> */}
+                {/* <Route path="/components" component={Comp} /> */}
+                <Route path="/button" component={ButtonBoard} />
                 <Route path="/check-box" component={CheckBoxBoard} />
-                <Route path="/popover" component={PopoverBoard} /> */}
+                <Route path="/popover" component={PopoverBoard} />
             </Switch>
+            
         </Container>
     )
 }

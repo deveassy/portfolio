@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom';
 
 export default function CheckBoxBoard() {
     return(
-    <Link to="/">Main</Link>
+        <>
+      <h1>About Check-box</h1>
+      <Link to="/">Main</Link>
+        </>
     )
 }

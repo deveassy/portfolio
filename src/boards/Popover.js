@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 
 export default function PopoverBoard() {
     return(
-        <Link to="/">Main</Link>
+        <>
+            <h1>About Popover</h1>
+            <Link to="/">Main</Link>
+        </>
     )
 }
