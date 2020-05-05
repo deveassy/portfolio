@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {BrowserRouter} from 'react-router-dom';
+// import Header from './components/Header';
 import ComponentList from './components/ComponentList';
-import Items from './components/Items';
 import RootRouter from './routes';
 import './App.css';
 
@@ -13,9 +13,7 @@ export default function App() {
       <BrowserRouter>
         <ContentContainer>
           <RootRouter>
-            <ComponentList>
-              <Items />
-            </ComponentList>
+            <ComponentList />
           </RootRouter>
         </ContentContainer>
       </BrowserRouter>

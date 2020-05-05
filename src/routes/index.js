@@ -8,17 +8,22 @@ import About from '../components/About';
 import {ButtonBoard, CheckBoxBoard, PopoverBoard} from '../boards';
 
 const RootRouter = ({children}) => {
+
+    const NotFound = () => {
+        return <div style={{fontWeight:800, fontSize:30}}>Sorry, Not Found</div>
+    }
     return(
         <Container>
+                {children}
             <Switch>
                 <Route exact path="/" component={Main} />
                 <Route path="/about" component={About} />
-                {children}
                 {/* <Route path="/detail" component={Detail} /> */}
                 {/* <Route path="/components" component={Comp} /> */}
                 <Route path="/button" component={ButtonBoard} />
                 <Route path="/check-box" component={CheckBoxBoard} />
                 <Route path="/popover" component={PopoverBoard} />
+                <Route component={NotFound} />
             </Switch>
             
         </Container>
