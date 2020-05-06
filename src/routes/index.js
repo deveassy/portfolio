@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import {Switch, Route} from 'react-router-dom';
 import Main from '../components/Main';
 import About from '../components/About';
-// import Detail from '../components/Detail';
-// import Comp from '../components/Comp';
 import {ButtonBoard, CheckBoxBoard, PopoverBoard} from '../boards';
 
 const RootRouter = ({children}) => {
@@ -14,18 +12,16 @@ const RootRouter = ({children}) => {
     }
     return(
         <Container>
-                {children}
+            <GlobalStyle />
             <Switch>
                 <Route exact path="/" component={Main} />
-                <Route path="/about" component={About} />
-                {/* <Route path="/detail" component={Detail} /> */}
-                {/* <Route path="/components" component={Comp} /> */}
+                <Route path="/profile" component={About} />
+                {children}
                 <Route path="/button" component={ButtonBoard} />
                 <Route path="/check-box" component={CheckBoxBoard} />
                 <Route path="/popover" component={PopoverBoard} />
                 <Route component={NotFound} />
             </Switch>
-            
         </Container>
     )
 }
@@ -39,4 +35,12 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+`;
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        margin: 0;
+        padding: 0;
+        /* background-color: tomato; */
+    }
 `;

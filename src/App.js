@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {BrowserRouter} from 'react-router-dom';
-// import Header from './components/Header';
 import ComponentList from './components/ComponentList';
 import RootRouter from './routes';
 import './App.css';
