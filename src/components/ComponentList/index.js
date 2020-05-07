@@ -39,7 +39,7 @@ const LinkButton = styled(Link)`
 
 const ListContainer = styled.div`
   padding: 70px 20px 10px 40px;
-  background-color: skyblue;
+  background-color: #ecb390;
 `;
 
 const ContentContainer = styled.div`
@@ -56,9 +56,13 @@ const MainButtonContainer = styled.div`
     padding: 10px;
     top: 570px;
     left: 1300px;
-    border: 0;
     border-radius: 50%;
-    background-color: #e7f5ff;
+    background-color: transparent;
+    &:hover {
+      /* background-color: #a8d3da; */
+      background-color: #cd8d7b;
+      box-shadow: 3px 3px 5px #6e5773;
+    }
 `;
 
 const MainButton = styled(Link)`

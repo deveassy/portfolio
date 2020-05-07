@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Switch, Route} from 'react-router-dom';
 import Main from '../components/Main';
-import About from '../components/About';
+import Profile from '../components/Profile';
 import {ButtonBoard, CheckBoxBoard, PopoverBoard} from '../boards';
 
 const RootRouter = ({children}) => {
@@ -15,7 +15,7 @@ const RootRouter = ({children}) => {
             <GlobalStyle />
             <Switch>
                 <Route exact path="/" component={Main} />
-                <Route path="/profile" component={About} />
+                <Route path="/profile" component={Profile} />
                 {children}
                 <Route path="/button" component={ButtonBoard} />
                 <Route path="/check-box" component={CheckBoxBoard} />

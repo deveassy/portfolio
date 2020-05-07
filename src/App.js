@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #ecdfc8;
   }
 `;
 
@@ -38,5 +38,5 @@ const Container = styled.div`
 const ContentContainer = styled(Container)`
   width: 100%;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #ecdfc8;
 `;
