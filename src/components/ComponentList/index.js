@@ -43,7 +43,7 @@ const ListContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  margin: 30px 50px;
+  margin: 30px 60px;
 `;
 
 // const MainButton = styled.div`

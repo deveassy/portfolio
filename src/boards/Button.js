@@ -8,7 +8,10 @@ function ButtonBoard() {
     <div>
     <Line />
     <Content>
-        <P>Button</P>
+        <P>
+          <p style={{fontSize:40, fontWeight:800}}>Button</p>
+          <p> What I used</p>
+        </P>
         <ButtonContent> {/* color: 배경색(#748ffc)을 기준으로 함 */}
           <Button mode="full" onClick={ () => {
             console.log("This is a Basic button.");
@@ -35,8 +38,9 @@ function ButtonBoard() {
 
 const Line = styled.div`
   position: absolute;
-  width: 70px;
-  border-top: 3px solid orange;
+  top: 100px;
+  width: 100px;
+  border-top: 5px solid orange;
 `;
 const Content = styled.div`
   display: flex;
@@ -44,13 +48,16 @@ const Content = styled.div`
 `;
 const P = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 260px;
   padding: 5px;
   top: 1px;
   border-bottom: none;
   border: 1px solid #000;
-  font-size: 40px;
-  font-weight: 800;
+  /* font-size: 40px;
+  font-weight: 800; */
   color: #495057;
   cursor: default;
 `;
