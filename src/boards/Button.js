@@ -8,28 +8,16 @@ function ButtonBoard() {
     <div>
     <Line />
     <Content>
-        <P>
-          <p style={{fontSize:40, fontWeight:800}}>Button</p>
-          <p> What I used</p>
-        </P>
+      <P>Button</P>
+      <p> What I used</p>
+        <Page>Main Page</Page>
         <ButtonContent> {/* color: 배경색(#748ffc)을 기준으로 함 */}
-          <Button mode="full" onClick={ () => {
-            console.log("This is a Basic button.");
-          }}>contained</Button>
-          <Button mode="line" color="#fff" onClick={ () => {
-            console.log("This is a out-line button.");
-          }}>outlined</Button>
-          <Button color="#fff" onClick={ () => {
-            console.log("This is a text button without line.");
-          }}>text</Button>
-          <Button mode="disabled" color="#868e96" disabled>disabled</Button>
-          <Button action="shadow" onClick={() => {
-            window.confirm('정말로?') 
-            if(true) return console.log("전송!");
-          }
-          }>Ani-1</Button>
-          <Button action="slide">Ani-2</Button>
-          <Button action="border">Ani-3</Button>
+          <Button><img src="/img/github.png" style={{width:20, height:20}}/> GITHUB</Button>
+        </ButtonContent>
+        <Page>Profile Page</Page>
+        <ButtonContent>
+          <Button><img src="/img/github.png" style={{width:20, height:20}}/> GITHUB</Button>
+          <Button><img src="/img/velog.jpg" style={{width:20, height:20}}/> VELOG</Button>
         </ButtonContent>
     </Content>
     </div>
@@ -48,22 +36,20 @@ const Content = styled.div`
 `;
 const P = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   width: 260px;
-  padding: 5px;
-  top: 1px;
-  border-bottom: none;
-  border: 1px solid #000;
-  /* font-size: 40px;
-  font-weight: 800; */
+  margin-bottom: -15px;
+  font-size: 40px;
+  font-weight: 800;
   color: #495057;
   cursor: default;
 `;
 
 const ButtonContent = styled.div`
-  border: 1px solid #000;
+  border: 1px solid #adb5bd;
+`;
+
+const Page = styled.div`
+  font-size: 25px;
 `;
 
 export default ButtonBoard;

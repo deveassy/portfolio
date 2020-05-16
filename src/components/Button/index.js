@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Button(props) {
   const {
     mode,
-    color = '#748ffc',
+    color = '#ecdfc8',
     action,
     disabled,
     onClick,
