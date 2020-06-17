@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
-import { ButtonBoard, CheckBoxBoard, PopoverBoard } from "../../boards";
+import { ButtonBoard, CheckBoxBoard, TooltipBoard } from "../../boards";
 
 export default function ComponentList() {
   return (
@@ -9,15 +9,17 @@ export default function ComponentList() {
       <ListContainer>
         <LinkButton to="/button">Button</LinkButton>
         <LinkButton to="/check-box">Check-Box</LinkButton>
-        <LinkButton to="/popover">Popover</LinkButton>
+        <LinkButton to="/tooltip">Tooltip</LinkButton>
       </ListContainer>
       <ContentContainer>
         <Route exact path="/button" component={ButtonBoard} />
         <Route path="/check-box" component={CheckBoxBoard} />
-        <Route path="/popover" component={PopoverBoard} />
+        <Route path="/tooltip" component={TooltipBoard} />
       </ContentContainer>
       <MainButtonContainer>
-        <MainButton to="/"><Img src="/img/home.png" /></MainButton>
+        <MainButton to="/">
+          <Img src="/img/home.png" />
+        </MainButton>
       </MainButtonContainer>
     </Container>
   );
@@ -51,25 +53,25 @@ const ContentContainer = styled.div`
 //   align-items: flex-end;
 // `;
 const MainButtonContainer = styled.div`
-    display: flex;
-    position: absolute;
-    padding: 10px;
-    top: 570px;
-    left: 1300px;
-    border-radius: 50%;
-    background-color: transparent;
-    &:hover {
-      /* background-color: #a8d3da; */
-      background-color: #cd8d7b;
-      box-shadow: 3px 3px 5px #6e5773;
-    }
+  display: flex;
+  position: absolute;
+  padding: 10px;
+  top: 570px;
+  left: 1300px;
+  border-radius: 50%;
+  background-color: transparent;
+  &:hover {
+    /* background-color: #a8d3da; */
+    background-color: #cd8d7b;
+    box-shadow: 3px 3px 5px #6e5773;
+  }
 `;
 
 const MainButton = styled(Link)`
-    text-decoration: none;
+  text-decoration: none;
 `;
 
 const Img = styled.img`
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 `;

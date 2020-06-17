@@ -1,5 +1,5 @@
-import ButtonBoard from './Button';
-import CheckBoxBoard from './CheckBox';
-import PopoverBoard from './Popover';
+import ButtonBoard from "./Button";
+import CheckBoxBoard from "./CheckBox";
+import TooltipBoard from "./Tooltip";
 
-export {ButtonBoard, CheckBoxBoard, PopoverBoard};
+export { ButtonBoard, CheckBoxBoard, TooltipBoard };
