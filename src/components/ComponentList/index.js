@@ -2,14 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import { Link, Route } from "react-router-dom";
 import { ButtonBoard, CheckBoxBoard, TooltipBoard } from "../../boards";
+import Button from "../Button";
 
-export default function ComponentList() {
+export default function ComponentList({ history }) {
   return (
     <Container>
       <ListContainer>
-        <LinkButton to="/button">Button</LinkButton>
-        <LinkButton to="/check-box">Check-Box</LinkButton>
-        <LinkButton to="/tooltip">Tooltip</LinkButton>
+        <Button item onClick={() => history.push("/button")}>
+          <ButtonImg>
+            <button>Button</button>
+          </ButtonImg>
+          <ButtonName>Button</ButtonName>
+        </Button>
+        <Button item onClick={() => history.push("/check-box")}>
+          <ButtonImg>
+            <input type="checkbox" false />
+          </ButtonImg>
+          <ButtonName>Check-Box</ButtonName>
+        </Button>
+        <Button item onClick={() => history.push("/tooltip")}>
+          <ButtonImg>
+            <TooltipTest>Tooltip</TooltipTest>
+          </ButtonImg>
+          <ButtonName>Tooltip</ButtonName>
+        </Button>
       </ListContainer>
       <ContentContainer>
         <Route exact path="/button" component={ButtonBoard} />
@@ -32,15 +48,28 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const LinkButton = styled(Link)`
-  margin: 0 30px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #000;
+const ButtonImg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 0 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+`;
+const ButtonName = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-top: 20px;
 `;
 
 const ListContainer = styled.div`
-  padding: 70px 20px 10px 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px 20px 40px;
   background-color: #ecb390;
 `;
 
@@ -48,10 +77,6 @@ const ContentContainer = styled.div`
   margin: 30px 60px;
 `;
 
-// const MainButton = styled.div`
-//   display: flex;
-//   align-items: flex-end;
-// `;
 const MainButtonContainer = styled.div`
   display: flex;
   position: absolute;
@@ -74,4 +99,24 @@ const MainButton = styled(Link)`
 const Img = styled.img`
   width: 40px;
   height: 40px;
+`;
+
+const TooltipTest = styled.span`
+  width: 50px;
+  padding: 5px 0;
+  background-color: #999;
+  font: 500 15px "sans-serif";
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 57px;
+    left: 72px;
+    margin-left: -5px;
+    border: 5px solid #999;
+    border-color: #999 transparent transparent transparent;
+  }
 `;

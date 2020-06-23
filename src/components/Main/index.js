@@ -16,22 +16,23 @@ export default function Main({ history }) {
       </ProfileButton>
       <ButtonContainer>
         <Button item onClick={() => history.push("/button")}>
-          <Img>
+          <ButtonImg>
             <button>Button</button>
-          </Img>
-          <Div>Button</Div>
+          </ButtonImg>
+          <ButtonName>Button</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/check-box")}>
-          <Img>
-            <input type="checkbox" />
-          </Img>
-          <Div>Check-Box</Div>
+          <ButtonImg>
+            <input type="checkbox" false />
+          </ButtonImg>
+          <ButtonName>Check-Box</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/tooltip")}>
-          <Img>이미지</Img>
-          <Div>Tooltip</Div>
+          <ButtonImg>
+            <TooltipTest>Tooltip</TooltipTest>
+          </ButtonImg>
+          <ButtonName>Tooltip</ButtonName>
         </Button>
-        {/* </ItemButton> */}
       </ButtonContainer>
     </Container>
   );
@@ -49,29 +50,6 @@ const ProfileButton = styled(Link)`
   text-decoration: none;
   font-size: 80px;
 `;
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 130px;
-`;
-
-const Img = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  border: 1px solid #f3a683;
-  border-radius: 50%;
-`;
-
-const Div = styled.div`
-  font-size: 22px;
-  margin-top: 20px;
-`;
-
 const ProfileLink = styled.p`
   display: flex;
   flex-direction: column;
@@ -83,4 +61,44 @@ const ProfileLink = styled.p`
   font-weight: 800;
   color: #ffa34d;
   text-shadow: 4px 4px 3px #fff;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 130px;
+`;
+const ButtonImg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #f3a683;
+  border-radius: 50%;
+`;
+const ButtonName = styled.div`
+  font-size: 22px;
+  margin-top: 20px;
+`;
+const TooltipTest = styled.span`
+  width: 50px;
+  padding: 5px 0;
+  background-color: #999;
+  font: 500 15px "sans-serif";
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 62px;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid #999;
+    border-color: #999 transparent transparent transparent;
+  }
 `;

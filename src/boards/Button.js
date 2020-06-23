@@ -1,38 +1,41 @@
-import React from 'react';
-import Button from '../components/Button';
-import styled from 'styled-components';
+import React from "react";
+import Button from "../components/Button";
+import styled from "styled-components";
 
 function ButtonBoard() {
-    
   return (
     <div>
-    <Line />
-    <Content>
-      <P>Button</P>
-      <p> What I used</p>
-        <div style={{fontSize:25}}>Main Page</div>
+      {/* <Line /> */}
+      <Content>
+        <P>Button</P>
+        <p> What I used</p>
+        <div style={{ fontSize: 25 }}>Main Page</div>
         <ButtonContent>
           <Button page="main">
-            <P1 style={{marginBottom:-10}}>PL▶︎Y</P1>
-            <P1 style={{color:"#ecb390"}}>Naegle [ 내글ː]</P1>
+            <P1 style={{ marginBottom: -10 }}>PL▶︎Y</P1>
+            <P1 style={{ color: "#ecb390" }}>Naegle [ 내글ː]</P1>
           </Button>
         </ButtonContent>
-        <div style={{fontSize:25}}>Profile Page</div>
+        <div style={{ fontSize: 25 }}>Profile Page</div>
         <ButtonContent>
-          <Button page="prof" style={{marginBottom:10}}><Img src="/img/github.png" alt="github" /> GITHUB</Button>
-          <Button page="prof"><Img src="/img/velog.jpg" alt="velog" /> VELOG</Button>
+          <Button page="prof" style={{ marginBottom: 10 }}>
+            <Img src="/img/github.png" alt="github" /> GITHUB
+          </Button>
+          <Button page="prof">
+            <Img src="/img/velog.jpg" alt="velog" /> VELOG
+          </Button>
         </ButtonContent>
-    </Content>
+      </Content>
     </div>
   );
 }
 
-const Line = styled.div`
-  position: absolute;
-  top: 100px;
-  width: 100px;
-  border-top: 5px solid orange;
-`;
+// const Line = styled.div`
+//   position: absolute;
+//   top: 100px;
+//   width: 100px;
+//   border-top: 5px solid orange;
+// `;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,7 +56,7 @@ const P1 = styled.p`
   align-items: center;
   justify-content: center;
   margin: 10px 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 25px;
   font-weight: 800;
   color: #ffa34d;
