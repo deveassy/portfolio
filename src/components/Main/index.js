@@ -1,19 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Button";
 
 export default function Main({ history }) {
   return (
     <Container>
-      <ProfileButton to="/profile">
+      {/* <ProfileButton to="/profile"> */}
+      <Button onClick={() => history.push("/profile")}>
         <ProfileLink>PL▶︎Y</ProfileLink>
         <ProfileLink
           style={{ color: "#ecb390", textShadow: "2px 2px 2px #fff" }}
         >
           Naegle [ 내글ː]
         </ProfileLink>
-      </ProfileButton>
+      </Button>
       <ButtonContainer>
         <Button item onClick={() => history.push("/button")}>
           <ButtonImg>
@@ -46,10 +47,10 @@ const Container = styled.div`
   margin-top: 70px;
 `;
 
-const ProfileButton = styled(Link)`
-  text-decoration: none;
-  font-size: 80px;
-`;
+// const ProfileButton = styled(Link)`
+//   text-decoration: none;
+//   font-size: 80px;
+// `;
 const ProfileLink = styled.p`
   display: flex;
   flex-direction: column;
@@ -68,7 +69,7 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 130px;
+  margin-top: 110px;
 `;
 const ButtonImg = styled.div`
   display: flex;

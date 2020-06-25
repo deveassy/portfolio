@@ -33,9 +33,9 @@ export default function ComponentList({ history }) {
         <Route path="/tooltip" component={TooltipBoard} />
       </ContentContainer>
       <MainButtonContainer>
-        <MainButton to="/">
+        <Button onClick={() => history.push("/")}>
           <Img src="/img/home.png" />
-        </MainButton>
+        </Button>
       </MainButtonContainer>
     </Container>
   );

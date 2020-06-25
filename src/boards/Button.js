@@ -6,49 +6,71 @@ function ButtonBoard() {
   return (
     <div>
       {/* <Line /> */}
-      <Content>
-        <P>Button</P>
-        <p> What I used</p>
-        <div style={{ fontSize: 25 }}>Main Page</div>
-        <ButtonContent>
+      <ButtonContent>
+        <PageName>Main Page</PageName>
+        <Pages>
           <Button page="main">
             <P1 style={{ marginBottom: -10 }}>PL▶︎Y</P1>
             <P1 style={{ color: "#ecb390" }}>Naegle [ 내글ː]</P1>
           </Button>
-        </ButtonContent>
-        <div style={{ fontSize: 25 }}>Profile Page</div>
-        <ButtonContent>
-          <Button page="prof" style={{ marginBottom: 10 }}>
-            <Img src="/img/github.png" alt="github" /> GITHUB
+          <Button item>
+            <ButtonImg>
+              <button>Button</button>
+            </ButtonImg>
+            <ButtonName>Button</ButtonName>
+          </Button>
+          <Button item>
+            <ButtonImg>
+              <input type="checkbox" false />
+            </ButtonImg>
+            <ButtonName>Check-Box</ButtonName>
+          </Button>
+          <Button item>
+            <ButtonImg>
+              <TooltipTest>Tooltip</TooltipTest>
+            </ButtonImg>
+            <ButtonName>Tooltip</ButtonName>
+          </Button>
+        </Pages>
+        <PageName>Profile Page</PageName>
+        <Pages>
+          <Button page="prof">
+            <LinkImg src="/img/github.png" alt="github" /> GITHUB
           </Button>
           <Button page="prof">
-            <Img src="/img/velog.jpg" alt="velog" /> VELOG
+            <LinkImg src="/img/velog.jpg" alt="velog" /> VELOG
           </Button>
-        </ButtonContent>
-      </Content>
+        </Pages>
+      </ButtonContent>
     </div>
   );
 }
 
-// const Line = styled.div`
-//   position: absolute;
-//   top: 100px;
-//   width: 100px;
-//   border-top: 5px solid orange;
-// `;
-const Content = styled.div`
+const ButtonContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const P = styled.div`
-  position: relative;
-  width: 260px;
-  margin-bottom: -15px;
-  font-size: 40px;
-  font-weight: 800;
-  color: #495057;
-  cursor: default;
+
+const PageName = styled.div`
+  font: 700 30px "sans-serif";
 `;
+const Pages = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 20px 0;
+  width: 700px;
+  border: 1px solid #000;
+`;
+// const P = styled.div`
+//   position: relative;
+//   width: 260px;
+//   margin-bottom: -15px;
+//   font-size: 40px;
+//   font-weight: 800;
+//   color: #495057;
+//   cursor: default;
+// `;
 
 const P1 = styled.p`
   display: flex;
@@ -63,15 +85,53 @@ const P1 = styled.p`
   text-shadow: 2px 2px 3px #fff;
 `;
 
-const ButtonContent = styled.div`
-  padding: 25px;
-  border: 1px solid #adb5bd;
-`;
-
-const Img = styled.img`
+const LinkImg = styled.img`
   width: 20px;
   height: 20px;
-  margin-right: 2px;
+  margin-right: 5px;
+`;
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px 20px 40px;
+  background-color: #ecb390;
+`;
+const ButtonImg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 0 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+`;
+const ButtonName = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-top: 20px;
+`;
+const TooltipTest = styled.span`
+  width: 50px;
+  padding: 5px 0;
+  background-color: #999;
+  font: 500 15px "sans-serif";
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 57px;
+    left: 72px;
+    margin-left: -5px;
+    border: 5px solid #999;
+    border-color: #999 transparent transparent transparent;
+  }
 `;
 
 export default ButtonBoard;
