@@ -1,29 +1,25 @@
 import React from "react";
-import Button from "../components/Button";
 import styled from "styled-components";
+import Button from "../components/Button";
 
 function ButtonBoard() {
   return (
     <div>
-      {/* <Line /> */}
       <ButtonContent>
         <PageName>Main Page</PageName>
         <Pages>
+          {/* <div style={{ fontWeight: 700, fontSize: 30 }}>Main Page</div> */}
           <Button page="main">
-            <P1 style={{ marginBottom: -10 }}>PL▶︎Y</P1>
-            <P1 style={{ color: "#ecb390" }}>Naegle [ 내글ː]</P1>
+            <MainButton style={{ marginBottom: -10 }}>PL▶︎Y</MainButton>
+            <MainButton style={{ color: "#ecb390" }}>
+              Naegle [ 내글ː]
+            </MainButton>
           </Button>
           <Button item>
             <ButtonImg>
-              <button>Button</button>
+              <ButtonItem>Button</ButtonItem>
             </ButtonImg>
             <ButtonName>Button</ButtonName>
-          </Button>
-          <Button item>
-            <ButtonImg>
-              <input type="checkbox" false />
-            </ButtonImg>
-            <ButtonName>Check-Box</ButtonName>
           </Button>
           <Button item>
             <ButtonImg>
@@ -31,14 +27,23 @@ function ButtonBoard() {
             </ButtonImg>
             <ButtonName>Tooltip</ButtonName>
           </Button>
+          <Button item>
+            <ButtonImg>tab</ButtonImg>
+            <ButtonName>TabMenu</ButtonName>
+          </Button>
         </Pages>
-        <PageName>Profile Page</PageName>
+        <PageName style={{ left: 670 }}>Profile Page</PageName>
         <Pages>
           <Button page="prof">
             <LinkImg src="/img/github.png" alt="github" /> GITHUB
           </Button>
           <Button page="prof">
             <LinkImg src="/img/velog.jpg" alt="velog" /> VELOG
+          </Button>
+          <Button>
+            <MainImgContainer>
+              <MainImg src="/img/home.png" />
+            </MainImgContainer>
           </Button>
         </Pages>
       </ButtonContent>
@@ -47,32 +52,25 @@ function ButtonBoard() {
 }
 
 const ButtonContent = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;
-
 const PageName = styled.div`
-  font: 700 30px "sans-serif";
+  position: absolute;
+  left: 10px;
+  font: 700 35px "sans-serif";
 `;
 const Pages = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 80px 20px;
+  margin: 60px 10px;
   width: 700px;
   border: 1px solid #000;
 `;
-// const P = styled.div`
-//   position: relative;
-//   width: 260px;
-//   margin-bottom: -15px;
-//   font-size: 40px;
-//   font-weight: 800;
-//   color: #495057;
-//   cursor: default;
-// `;
 
-const P1 = styled.p`
+const MainButton = styled.p`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,11 +89,17 @@ const LinkImg = styled.img`
   margin-right: 5px;
 `;
 
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 10px 20px 20px 40px;
-  background-color: #ecb390;
+const MainImgContainer = styled.div`
+  padding: 10px;
+  border-radius: 50%;
+  &:hover {
+    background-color: #cd8d7b;
+    box-shadow: 3px 3px 5px #6e5773;
+  }
+`;
+const MainImg = styled.img`
+  width: 40px;
+  height: 40px;
 `;
 const ButtonImg = styled.div`
   display: flex;
@@ -106,6 +110,12 @@ const ButtonImg = styled.div`
   margin: 0 0 10px;
   border: 1px solid #fff;
   border-radius: 50%;
+`;
+const ButtonItem = styled.div`
+  padding: 2px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
 `;
 const ButtonName = styled.div`
   display: flex;

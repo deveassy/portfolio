@@ -7,14 +7,16 @@ export default function Profile() {
     <Container>
       <ProfileContainer>
         <ProfileImg src="/img/profile.JPG" />
-        {/* <Nickname>deveassy</Nickname> */}
         <ProfileContent>
           <AboutMe>LEE EUN JI</AboutMe>
-          <AboutMe style={{ fontSize: 18, fontWeight: 400, margin: 0 }}>
+          <AboutMe style={{ fontSize: 18, fontWeight: 300 }}>
             Frontend Developer
           </AboutMe>
           <ContactContent>
-            <div style={{ marginBottom: 10, fontWeight: 900 }}> Contact Me</div>
+            <div style={{ marginTop: 15, marginBottom: 10, fontWeight: 900 }}>
+              {" "}
+              Contact Me
+            </div>
             <div style={{ marginBottom: 10 }}>
               <LinkImg src="/img/down.png" />
             </div>
@@ -73,17 +75,6 @@ const ProfileImg = styled.img`
     border: 5px solid #ffa34d;
   }
 `;
-// const Nickname = styled.span`
-//   position: absolute;
-//   visibility: hidden;
-//   top: 120px;
-//   left: 200px;
-//   color: blue;
-//   font: 600 20px "sans-serif";
-//   &:hover {
-//     visibility: visible;
-//   }
-// `;
 
 const ProfileContent = styled.div`
   position: absolute;
@@ -96,9 +87,8 @@ const ProfileContent = styled.div`
 `;
 
 const AboutMe = styled.p`
-  margin: 20px 0 0;
-  font-size: 35px;
-  font-weight: 600;
+  margin: 10px 0 -10px;
+  font: 600 45px "Gochi Hand", cursive;
   color: #000;
 `;
 const ContactContent = styled.div`
@@ -113,7 +103,6 @@ const ContactContent = styled.div`
 `;
 
 const ContactLink = styled.a`
-  /* margin-top: 25px; */
   margin: 10px;
   text-decoration: none;
   font-size: 22px;
@@ -135,18 +124,14 @@ const MainButtonContainer = styled.div`
   top: 570px;
   left: 1300px;
   border-radius: 50%;
-  background-color: transparent;
   &:hover {
-    /* background-color: #a8d3da; */
     background-color: #cd8d7b;
     box-shadow: 3px 3px 5px #6e5773;
   }
 `;
-
 const MainButton = styled(Link)`
   text-decoration: none;
 `;
-
 const MainImg = styled.img`
   width: 40px;
   height: 40px;

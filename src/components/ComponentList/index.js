@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, Route } from "react-router-dom";
-import { ButtonBoard, CheckBoxBoard, TooltipBoard } from "../../boards";
+import { Route } from "react-router-dom";
+import { ButtonBoard, TabMenuBoard, TooltipBoard } from "../../boards";
 import Button from "../Button";
 
 export default function ComponentList({ history }) {
@@ -9,28 +9,27 @@ export default function ComponentList({ history }) {
     <Container>
       <ListContainer>
         <Button item onClick={() => history.push("/button")}>
+          {/* <Button item onClick={moveRoute}> */}
           <ButtonImg>
-            <button>Button</button>
+            <ButtonItem>Button</ButtonItem>
           </ButtonImg>
           <ButtonName>Button</ButtonName>
         </Button>
-        <Button item onClick={() => history.push("/check-box")}>
-          <ButtonImg>
-            <input type="checkbox" false />
-          </ButtonImg>
-          <ButtonName>Check-Box</ButtonName>
-        </Button>
         <Button item onClick={() => history.push("/tooltip")}>
           <ButtonImg>
-            <TooltipTest>Tooltip</TooltipTest>
+            <TooltipItem>Tooltip</TooltipItem>
           </ButtonImg>
           <ButtonName>Tooltip</ButtonName>
+        </Button>
+        <Button item onClick={() => history.push("/tab-menu")}>
+          <ButtonImg>tab</ButtonImg>
+          <ButtonName>TabMenu</ButtonName>
         </Button>
       </ListContainer>
       <ContentContainer>
         <Route exact path="/button" component={ButtonBoard} />
-        <Route path="/check-box" component={CheckBoxBoard} />
         <Route path="/tooltip" component={TooltipBoard} />
+        <Route path="/tab-menu" component={TabMenuBoard} />
       </ContentContainer>
       <MainButtonContainer>
         <Button onClick={() => history.push("/")}>
@@ -47,6 +46,12 @@ const Container = styled.div`
   position: relative;
   flex-direction: column;
 `;
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px 20px 40px;
+  background-color: #ecb390;
+`;
 
 const ButtonImg = styled.div`
   display: flex;
@@ -58,6 +63,12 @@ const ButtonImg = styled.div`
   border: 1px solid #fff;
   border-radius: 50%;
 `;
+const ButtonItem = styled.div`
+  padding: 2px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+`;
 const ButtonName = styled.div`
   display: flex;
   align-items: center;
@@ -66,17 +77,9 @@ const ButtonName = styled.div`
   margin-top: 20px;
 `;
 
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 10px 20px 20px 40px;
-  background-color: #ecb390;
-`;
-
 const ContentContainer = styled.div`
   margin: 30px 60px;
 `;
-
 const MainButtonContainer = styled.div`
   display: flex;
   position: absolute;
@@ -91,17 +94,11 @@ const MainButtonContainer = styled.div`
     box-shadow: 3px 3px 5px #6e5773;
   }
 `;
-
-const MainButton = styled(Link)`
-  text-decoration: none;
-`;
-
 const Img = styled.img`
   width: 40px;
   height: 40px;
 `;
-
-const TooltipTest = styled.span`
+const TooltipItem = styled.span`
   width: 50px;
   padding: 5px 0;
   background-color: #999;
@@ -109,7 +106,6 @@ const TooltipTest = styled.span`
   color: #fff;
   text-align: center;
   border-radius: 3px;
-
   &::after {
     content: "";
     position: absolute;

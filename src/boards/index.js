@@ -1,5 +1,5 @@
 import ButtonBoard from "./Button";
-import CheckBoxBoard from "./CheckBox";
 import TooltipBoard from "./Tooltip";
+import TabMenuBoard from "./TabMenu";
 
-export { ButtonBoard, CheckBoxBoard, TooltipBoard };
+export { ButtonBoard, TooltipBoard, TabMenuBoard };

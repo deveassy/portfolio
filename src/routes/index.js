@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Switch, Route } from "react-router-dom";
 import Main from "../components/Main";
 import Profile from "../components/Profile";
-import { ButtonBoard, CheckBoxBoard, TooltipBoard } from "../boards";
+import { ButtonBoard, TooltipBoard, TabMenuBoard } from "../boards";
 
 const RootRouter = ({ children }) => {
   const NotFound = () => {
@@ -19,8 +19,8 @@ const RootRouter = ({ children }) => {
         <Route path="/profile" component={Profile} />
         {children}
         <Route path="/button" component={ButtonBoard} />
-        <Route path="/check-box" component={CheckBoxBoard} />
         <Route path="/tooltip" component={TooltipBoard} />
+        <Route path="/tab-menu" component={TabMenuBoard} />
         <Route component={NotFound} />
       </Switch>
     </Container>

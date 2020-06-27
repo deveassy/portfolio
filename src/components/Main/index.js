@@ -1,12 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Button";
 
 export default function Main({ history }) {
   return (
     <Container>
-      {/* <ProfileButton to="/profile"> */}
       <Button onClick={() => history.push("/profile")}>
         <ProfileLink>PL▶︎Y</ProfileLink>
         <ProfileLink
@@ -18,21 +16,19 @@ export default function Main({ history }) {
       <ButtonContainer>
         <Button item onClick={() => history.push("/button")}>
           <ButtonImg>
-            <button>Button</button>
+            <ButtonItem>Button</ButtonItem>
           </ButtonImg>
           <ButtonName>Button</ButtonName>
-        </Button>
-        <Button item onClick={() => history.push("/check-box")}>
-          <ButtonImg>
-            <input type="checkbox" false />
-          </ButtonImg>
-          <ButtonName>Check-Box</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/tooltip")}>
           <ButtonImg>
             <TooltipTest>Tooltip</TooltipTest>
           </ButtonImg>
           <ButtonName>Tooltip</ButtonName>
+        </Button>
+        <Button item onClick={() => history.push("/tab-menu")}>
+          <ButtonImg>tab</ButtonImg>
+          <ButtonName>TabMenu</ButtonName>
         </Button>
       </ButtonContainer>
     </Container>
@@ -47,10 +43,6 @@ const Container = styled.div`
   margin-top: 70px;
 `;
 
-// const ProfileButton = styled(Link)`
-//   text-decoration: none;
-//   font-size: 80px;
-// `;
 const ProfileLink = styled.p`
   display: flex;
   flex-direction: column;
@@ -79,6 +71,12 @@ const ButtonImg = styled.div`
   height: 70px;
   border: 1px solid #f3a683;
   border-radius: 50%;
+`;
+const ButtonItem = styled.div`
+  padding: 2px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
 `;
 const ButtonName = styled.div`
   font-size: 22px;
