@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 function ButtonBoard() {
@@ -8,7 +9,6 @@ function ButtonBoard() {
       <ButtonContent>
         <PageName>Main Page</PageName>
         <Pages>
-          {/* <div style={{ fontWeight: 700, fontSize: 30 }}>Main Page</div> */}
           <Button page="main">
             <MainButton style={{ marginBottom: -10 }}>PL▶︎Y</MainButton>
             <MainButton style={{ color: "#ecb390" }}>
@@ -37,7 +37,7 @@ function ButtonBoard() {
           <Button page="prof">
             <LinkImg src="/img/github.png" alt="github" /> GITHUB
           </Button>
-          <Button page="prof">
+          <Button page="prof" style={{ margin: "0 30px" }}>
             <LinkImg src="/img/velog.jpg" alt="velog" /> VELOG
           </Button>
           <Button>
@@ -45,6 +45,9 @@ function ButtonBoard() {
               <MainImg src="/img/home.png" />
             </MainImgContainer>
           </Button>
+          {/* <MainImgContainer>
+            <MainImg src="/img/home.png" />
+          </MainImgContainer> */}
         </Pages>
       </ButtonContent>
     </div>
@@ -59,14 +62,17 @@ const ButtonContent = styled.div`
 const PageName = styled.div`
   position: absolute;
   left: 10px;
-  font: 700 35px "sans-serif";
+  font: 700 35px "Pangolin", cursive;
 `;
 const Pages = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
-  padding: 80px 20px;
-  margin: 60px 10px;
+  padding: 50px 20px;
+  margin: 70px 10px;
   width: 700px;
+  min-width: 448px;
   border: 1px solid #000;
 `;
 
@@ -97,6 +103,15 @@ const MainImgContainer = styled.div`
     box-shadow: 3px 3px 5px #6e5773;
   }
 `;
+// const MainImgContainer = styled(Link)`
+//   padding: 10px;
+//   border-radius: 50%;
+//   &:hover {
+//     background-color: #cd8d7b;
+//     box-shadow: 3px 3px 5px #6e5773;
+//   }
+// `;
+
 const MainImg = styled.img`
   width: 40px;
   height: 40px;

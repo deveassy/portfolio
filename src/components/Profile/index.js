@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Button from "../Button";
 
-export default function Profile() {
+export default function Profile({ history }) {
   return (
     <Container>
       <ProfileContainer>
@@ -34,9 +34,9 @@ export default function Profile() {
         </ProfileContent>
       </ProfileContainer>
       <MainButtonContainer>
-        <MainButton to="/">
+        <Button onClick={() => history.goBack()}>
           <MainImg src="/img/home.png" />
-        </MainButton>
+        </Button>
       </MainButtonContainer>
     </Container>
   );
@@ -129,9 +129,7 @@ const MainButtonContainer = styled.div`
     box-shadow: 3px 3px 5px #6e5773;
   }
 `;
-const MainButton = styled(Link)`
-  text-decoration: none;
-`;
+
 const MainImg = styled.img`
   width: 40px;
   height: 40px;

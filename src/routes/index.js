@@ -3,7 +3,12 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Switch, Route } from "react-router-dom";
 import Main from "../components/Main";
 import Profile from "../components/Profile";
-import { ButtonBoard, TooltipBoard, TabMenuBoard } from "../boards";
+import {
+  ButtonBoard,
+  TooltipBoard,
+  TabMenuBoard,
+  ProfileImgBoard,
+} from "../boards";
 
 const RootRouter = ({ children }) => {
   const NotFound = () => {
@@ -15,12 +20,13 @@ const RootRouter = ({ children }) => {
     <Container>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact={true} path="/" component={Main} />
         <Route path="/profile" component={Profile} />
         {children}
         <Route path="/button" component={ButtonBoard} />
         <Route path="/tooltip" component={TooltipBoard} />
         <Route path="/tab-menu" component={TabMenuBoard} />
+        <Route path="/profile-img" component={ProfileImgBoard} />
         <Route component={NotFound} />
       </Switch>
     </Container>

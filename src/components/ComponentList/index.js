@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import { Route } from "react-router-dom";
-import { ButtonBoard, TabMenuBoard, TooltipBoard } from "../../boards";
+import { Route, Link, Switch } from "react-router-dom";
+import {
+  ButtonBoard,
+  TabMenuBoard,
+  TooltipBoard,
+  ProfileImgBoard,
+} from "../../boards";
 import Button from "../Button";
 
 export default function ComponentList({ history }) {
+  const NotFound = () => {
+    return (
+      <div style={{ fontWeight: 800, fontSize: 30 }}>Sorry, Not Found</div>
+    );
+  };
   return (
     <Container>
       <ListContainer>
         <Button item onClick={() => history.push("/button")}>
-          {/* <Button item onClick={moveRoute}> */}
           <ButtonImg>
             <ButtonItem>Button</ButtonItem>
           </ButtonImg>
@@ -25,16 +34,24 @@ export default function ComponentList({ history }) {
           <ButtonImg>tab</ButtonImg>
           <ButtonName>TabMenu</ButtonName>
         </Button>
+        <Button item onClick={() => history.push("/profile-img")}>
+          <ButtonImg>
+            <ProfileImg src="./img/woman.png" />
+          </ButtonImg>
+          <ButtonName>Profile-Img</ButtonName>
+        </Button>
       </ListContainer>
       <ContentContainer>
-        <Route exact path="/button" component={ButtonBoard} />
-        <Route path="/tooltip" component={TooltipBoard} />
-        <Route path="/tab-menu" component={TabMenuBoard} />
+        <Switch>
+          <Route exact={true} path="/button" component={ButtonBoard} />
+          <Route path="/tooltip" component={TooltipBoard} />
+          <Route path="/tab-menu" component={TabMenuBoard} />
+          <Route path="/profile-img" component={ProfileImgBoard} />
+          <Route component={NotFound} />
+        </Switch>
       </ContentContainer>
-      <MainButtonContainer>
-        <Button onClick={() => history.push("/")}>
-          <Img src="/img/home.png" />
-        </Button>
+      <MainButtonContainer to="/">
+        <Img src="/img/home.png" />
       </MainButtonContainer>
     </Container>
   );
@@ -80,7 +97,7 @@ const ButtonName = styled.div`
 const ContentContainer = styled.div`
   margin: 30px 60px;
 `;
-const MainButtonContainer = styled.div`
+const MainButtonContainer = styled(Link)`
   display: flex;
   position: absolute;
   padding: 10px;
@@ -115,4 +132,13 @@ const TooltipItem = styled.span`
     border: 5px solid #999;
     border-color: #999 transparent transparent transparent;
   }
+`;
+
+const ProfileImg = styled.img`
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
 `;

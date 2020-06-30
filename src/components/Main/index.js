@@ -30,6 +30,12 @@ export default function Main({ history }) {
           <ButtonImg>tab</ButtonImg>
           <ButtonName>TabMenu</ButtonName>
         </Button>
+        <Button item onClick={() => history.push("/profile-img")}>
+          <ButtonImg>
+            <ProfileImg src="./img/woman.png" />
+          </ButtonImg>
+          <ButtonName>Profile-Img</ButtonName>
+        </Button>
       </ButtonContainer>
     </Container>
   );
@@ -100,4 +106,13 @@ const TooltipTest = styled.span`
     border: 5px solid #999;
     border-color: #999 transparent transparent transparent;
   }
+`;
+
+const ProfileImg = styled.img`
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
 `;
