@@ -1,17 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+
 import Button from "../Button";
+import Tooltip from "../Tooltip";
 
 export default function Main({ history }) {
   return (
     <Container>
       <Button onClick={() => history.push("/profile")}>
-        <ProfileLink>PL▶︎Y</ProfileLink>
-        <ProfileLink
-          style={{ color: "#ecb390", textShadow: "2px 2px 2px #fff" }}
-        >
-          Naegle [ 내글ː]
-        </ProfileLink>
+        <Tooltip label="Here is My Profile, Come On :)">
+          <ProfileLink>PL▶︎Y</ProfileLink>
+          <ProfileLink
+            style={{ color: "#ecb390", textShadow: "2px 2px 2px #fff" }}
+          >
+            Naegle [ 내글ː]
+          </ProfileLink>
+        </Tooltip>
       </Button>
       <ButtonContainer>
         <Button item onClick={() => history.push("/button")}>
