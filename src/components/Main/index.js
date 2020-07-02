@@ -20,19 +20,26 @@ export default function Main({ history }) {
       <ButtonContainer>
         <Button item onClick={() => history.push("/button")}>
           <ButtonImg>
-            <ButtonItem>Button</ButtonItem>
+            <ButtonIcon>Button</ButtonIcon>
           </ButtonImg>
           <ButtonName>Button</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/tooltip")}>
           <ButtonImg>
-            <TooltipTest>Tooltip</TooltipTest>
+            <TooltipIcon>Tooltip</TooltipIcon>
           </ButtonImg>
           <ButtonName>Tooltip</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/tab-menu")}>
-          <ButtonImg>tab</ButtonImg>
-          <ButtonName>TabMenu</ButtonName>
+          <ButtonImg>
+            <TabIcon
+              style={{ borderColor: "#000 transparent transparent #000" }}
+            >
+              tab1
+            </TabIcon>
+            <TabIcon style={{ backgroundColor: "#ffbd69" }}>tab2</TabIcon>
+          </ButtonImg>
+          <ButtonName>Tab-Menu</ButtonName>
         </Button>
         <Button item onClick={() => history.push("/profile-img")}>
           <ButtonImg>
@@ -52,7 +59,6 @@ const Container = styled.div`
   align-items: center;
   margin-top: 70px;
 `;
-
 const ProfileLink = styled.p`
   display: flex;
   flex-direction: column;
@@ -82,7 +88,7 @@ const ButtonImg = styled.div`
   border: 1px solid #f3a683;
   border-radius: 50%;
 `;
-const ButtonItem = styled.div`
+const ButtonIcon = styled.div`
   padding: 2px;
   background-color: #fff;
   border: 1px solid #000;
@@ -92,7 +98,8 @@ const ButtonName = styled.div`
   font-size: 22px;
   margin-top: 20px;
 `;
-const TooltipTest = styled.span`
+
+const TooltipIcon = styled.span`
   width: 50px;
   padding: 5px 0;
   background-color: #999;
@@ -111,7 +118,15 @@ const TooltipTest = styled.span`
     border-color: #999 transparent transparent transparent;
   }
 `;
-
+const TabIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 15px;
+  border: 1px solid #000;
+  font-size: 10px;
+`;
 const ProfileImg = styled.img`
   width: 25px;
   height: 25px;
