@@ -11,11 +11,21 @@ const StyledImage = styled.img`
     return 0;
   }};
   border: 0;
-  transition: all 0.07s linear;
+  transition: ${(props) => {
+    if (props.animation) return "all 0.1s ease-in-out";
+  }};
   &:hover {
-    transform: scale(1.3);
-    transition: all 0.07s linear;
-    border: 5px solid #ffa34d;
+    transform: ${(props) => {
+      if (props.animation) return "scale(1.3)";
+    }};
+    border: ${(props) => {
+      if (props.animation) return "5px solid #ffa34d";
+    }};
+    /* & > span {
+      visibility: visible;
+      margin-bottom: 20px;
+      width: 270px;
+    } */
   }
 `;
 
