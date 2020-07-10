@@ -1,12 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+
 import Button from "../Button";
+import ProfileImg from "../ProfileImg";
 
 export default function Profile({ history }) {
   return (
     <Container>
       <ProfileContainer>
-        <ProfileImg src="/img/profile.JPG" />
+        <ImgContainer>
+          <ProfileImg
+            src="./img/profile.JPG"
+            variant="circle"
+            size={170}
+            animation
+            style={{ position: "absolute" }}
+          />
+          <NickName>EASSY</NickName>
+        </ImgContainer>
         <ProfileContent>
           <AboutMe>LEE EUN JI</AboutMe>
           <AboutMe style={{ fontSize: 18, fontWeight: 300 }}>
@@ -45,6 +56,9 @@ export default function Profile({ history }) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 `;
 
 const ProfileContainer = styled.div`
@@ -53,7 +67,7 @@ const ProfileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 480px;
-  height: 530px;
+  height: 560px;
   margin: 70px;
   border: 2px solid gray;
   border-radius: 10px;
@@ -61,19 +75,39 @@ const ProfileContainer = styled.div`
   background-color: #fcf8e8;
 `;
 
-const ProfileImg = styled.img`
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  margin-top: 45px;
-  border: 0;
+const ImgContainer = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  top: 70px;
   border-radius: 50%;
-  transition: all 0.07s linear;
   &:hover {
-    transform: scale(1.3);
-    transition: all 0.07s linear;
-    border: 5px solid #ffa34d;
+    & > span {
+      visibility: visible;
+      background-color: orange;
+      margin-bottom: 20px;
+      width: 220px;
+    }
   }
+`;
+const NickName = styled.span`
+  z-index: 1;
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -50px;
+  width: 50px;
+  height: 30px;
+  padding: 5px;
+  color: #fff;
+  font: 800 22px "Gochi Hand", cursive;
+  transition: width 0.3s ease, margin-bottom 0.3s ease-in-out;
 `;
 
 const ProfileContent = styled.div`
@@ -87,7 +121,7 @@ const ProfileContent = styled.div`
 `;
 
 const AboutMe = styled.p`
-  margin: 10px 0 -10px;
+  margin: 30px 0 -20px;
   font: 600 45px "Gochi Hand", cursive;
   color: #000;
 `;
@@ -121,8 +155,8 @@ const MainButtonContainer = styled.div`
   display: flex;
   position: absolute;
   padding: 10px;
-  top: 570px;
-  left: 1300px;
+  bottom: 100px;
+  right: 80px;
   border-radius: 50%;
   &:hover {
     background-color: #cd8d7b;

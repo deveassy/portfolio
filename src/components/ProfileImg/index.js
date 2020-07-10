@@ -11,8 +11,9 @@ const StyledImage = styled.img`
     return 0;
   }};
   border: 0;
+  /* 애니메이션 효과 추가부분 */
   transition: ${(props) => {
-    if (props.animation) return "all 0.1s ease-in-out";
+    if (props.animation) return "all 0.15s ease-in-out;";
   }};
   &:hover {
     transform: ${(props) => {
@@ -21,11 +22,9 @@ const StyledImage = styled.img`
     border: ${(props) => {
       if (props.animation) return "5px solid #ffa34d";
     }};
-    /* & > span {
-      visibility: visible;
-      margin-bottom: 20px;
-      width: 270px;
-    } */
+    margin-bottom: ${(props) => {
+      if (props.animation) return "30px";
+    }};
   }
 `;
 
