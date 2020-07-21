@@ -7,7 +7,7 @@ import {
   TooltipBoard,
   ProfileImgBoard,
 } from "../../boards";
-import Button from "../Button";
+// import Button from "../Button";
 
 export default function ComponentList() {
   const NotFound = () => {
@@ -110,10 +110,10 @@ const LinkButton = styled(NavLink)`
 `;
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
+  width: 100%;
 `;
 const ListContainer = styled.div`
   display: flex;
@@ -148,17 +148,17 @@ const ButtonName = styled.div`
 
 const ContentContainer = styled.div`
   margin: 30px 60px;
+  height: 500px;
 `;
 const MainButtonContainer = styled(Link)`
   display: flex;
   position: absolute;
   padding: 10px;
-  top: 570px;
-  left: 1300px;
+  bottom: 40px;
+  right: 50px;
   border-radius: 50%;
   background-color: #ecdfc8;
   &:hover {
-    /* background-color: #a8d3da; */
     background-color: #cd8d7b;
     box-shadow: 3px 3px 5px #6e5773;
   }

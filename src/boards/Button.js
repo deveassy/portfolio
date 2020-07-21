@@ -93,7 +93,7 @@ const Pages = styled.div`
   padding: 20px;
   margin: 70px 10px;
   width: 600px;
-  height: 300px;
+  /* height: 300px; */
   min-width: 448px;
 `;
 const Description = styled.span`

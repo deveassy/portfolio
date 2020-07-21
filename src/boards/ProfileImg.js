@@ -44,7 +44,6 @@ const PageName = styled.div`
   font: 700 35px "Pangolin", cursive;
 `;
 const ProfileImgContainer = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   width: 880px;
